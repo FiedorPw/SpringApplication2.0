@@ -1,6 +1,5 @@
 package bada_bdbt_proj;
 
-import bada_bdbt_proj.CzlonekDAO;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +23,7 @@ public class AppController implements WebMvcConfigurer {
         @GetMapping("/database")
         public String greeting(Model model) {
             System.out.println("dupasasaassa");
-            List<Czlonek> czlonekList =dao.list();
+            List<Student> czlonekList =dao.list();
             System.out.println(czlonekList.size());
             model.addAttribute("czlonekList",czlonekList);
             return "database";
@@ -39,7 +37,7 @@ public class AppController implements WebMvcConfigurer {
         @GetMapping("/new")
         public String showNewForm(Model model) {
             System.out.println("modio");
-            Czlonek czlon=new Czlonek();
+            Student czlon=new Student(1, "stach", "pach", 123123, 12);
             model.addAttribute("czlon",czlon);
             return "new_form";
 
@@ -49,7 +47,7 @@ public class AppController implements WebMvcConfigurer {
     @Controller
     public class dodawanie {
         @RequestMapping(value = "/save", method = RequestMethod.POST)
-        public String save(@ModelAttribute("czlon") Czlonek czlon) {
+        public String save(@ModelAttribute("czlon") Student czlon) {
             dao.save(czlon);
             System.out.println("dodawanko :)");
             return "redirect:/database";
@@ -58,7 +56,7 @@ public class AppController implements WebMvcConfigurer {
     @Controller
     public class aktualizacja {
         @RequestMapping(value = "/update", method = RequestMethod.POST)
-        public String save(@ModelAttribute("czlon") Czlonek czlon) {
+        public String save(@ModelAttribute("czlon") Student czlon) {
             dao.update(czlon);
             System.out.println("aktualizacja :)");
             return "redirect:/database";
@@ -70,7 +68,7 @@ public class AppController implements WebMvcConfigurer {
             public ModelAndView showEditForm(@PathVariable(name="id") int id)
             {
                 ModelAndView mav=new ModelAndView("edit_form");
-                Czlonek czlon=dao.get(id);
+                Student czlon=dao.get(id);
                 mav.addObject("czlon",czlon);
                 return mav;
             }
