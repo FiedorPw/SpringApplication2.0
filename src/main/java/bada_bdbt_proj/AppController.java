@@ -23,9 +23,9 @@ public class AppController implements WebMvcConfigurer {
         @GetMapping("/database")
         public String greeting(Model model) {
             System.out.println("dupasasaassa");
-            List<Student> czlonekList =dao.list();
-            System.out.println(czlonekList.size());
-            model.addAttribute("czlonekList",czlonekList);
+            List<Student> studentList = dao.list();
+            System.out.println(studentList.size());
+            model.addAttribute("studentList",studentList);
             return "database";
 
         }

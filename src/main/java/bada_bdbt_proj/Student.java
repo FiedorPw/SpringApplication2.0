@@ -1,14 +1,27 @@
 package bada_bdbt_proj;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class Student {
+import java.io.Serializable;
+
+
+
+@JsonInclude(JsonInclude.Include.ALWAYS)
+public class Student implements Serializable {
+
     public int ID_STUDENTA;
     public String IMIE;
     public String NAZWISKO;
     public int PESEL;
     public int TELEFON;
 
+
+
+    @Autowired
+    public Student( ) {
+
+    }
     @Autowired
     public Student(int ID_STUDENTA, String IMIE, String NAZWISKO, int PESEL, int TELEFON) {
         this.ID_STUDENTA = ID_STUDENTA;
@@ -17,6 +30,7 @@ public class Student {
         this.PESEL = PESEL;
         this.TELEFON = TELEFON;
     }
+
     public void setID_STUDENTA(int ID_STUDENTA) {
         this.ID_STUDENTA = ID_STUDENTA;
     }
@@ -59,10 +73,7 @@ public class Student {
 //    public Student(int id_studenta, String stach, String pach, int i, int telefon){};
 
 
-    @Autowired
-    public Student( ) {
 
-    }
     /*
     public int getNR_CZLONKA() {
         return NR_CZLONKA;
@@ -109,12 +120,12 @@ public class Student {
     */
     @Override
     public String toString() {
-        return "Czlonek{" +
-                "NR_CZLONKA=" + ID_STUDENTA +
+        return "STUDENT{" +
+                "ID_STUDENTA=" + ID_STUDENTA +
                 ", IMIE='" + IMIE + '\'' +
                 ", NAZWISKO='" + NAZWISKO + '\'' +
                 ", PESEL='" + PESEL + '\'' +
-                ", NR_TELEFONU='" + TELEFON + '\'' +
+                ", TELEFON='" + TELEFON + '\'' +
                 '}';
     }
 }

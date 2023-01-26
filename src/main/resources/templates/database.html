@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -13,27 +14,27 @@
     <!-- Table header -->
     <thead>
     <tr> <!-- Table row -->
-        <th>NR_CZLONKA</th> <!–- Table column -->
+        <th>ID_STUDENTA</th> <!–- Table column -->
         <th>Imie</th>
         <th>Nazwisko</th>
         <th>Pesel</th>
-        <th>Nr. telefonu</th>
+        <th>TELEFON</th>
         <th>ACTION</th>
     </tr>
     </thead>
 
     <!-- Table body -->
     <tbody>
-    <tr th:each = "czlonek : ${czlonekList}">
-        <td th:text = "${czlonek.NR_PARTNERA}">Item Name</td>
-        <td th:text = "${czlonek.NAZWA}">Item Name</td>
-        <td th:text = "${czlonek.STRONA_INTERNETOWA}">Quantity</td>
-        <td th:text = "${czlonek.SPOSOB_WSPOLPRACY}">Amount</td>
-        <td th:text = "${czlonek.NR_KLUBU}">Amount</td>
+    <tr th:each = "student : ${studentList}">
+        <td th:text = "${student.ID_STUDENTA}">Item Name</td>
+        <td th:text = "${student.IMIE}">Item Name</td>
+        <td th:text = "${student.NAZWISKO}">Quantity</td>
+        <td th:text = "${student.PESEL}">Amount</td>
+        <td th:text = "${student.TELEFON}">Amount</td>
         <td>
-            <a th:href="@{'/edit/' + ${czlonek.NR_PARTNERA}}">Edytuj</a>
+            <a th:href="@{'/edit/' + ${student.ID_STUDENTA}}">Edytuj</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <a th:href="@{'/delete/' + ${czlonek.NR_PARTNERA}}">Usun</a>
+            <a th:href="@{'/delete/' + ${student.ID_STUDENTA}}">Usun</a>
         </td>
     </tr>
     </tbody>

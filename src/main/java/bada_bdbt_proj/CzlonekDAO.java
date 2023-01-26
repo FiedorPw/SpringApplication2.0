@@ -17,10 +17,11 @@ public class CzlonekDAO {
     private JdbcTemplate jdbcTemplate;
     public List<Student> list(){
         String sql="SELECT * FROM STUDENCI";
+
         System.out.println(jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Student.class)).isEmpty());
-        List<Student> listCzlonek=jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Student.class));
-        System.out.println("AAAA "+listCzlonek.size());
-        return listCzlonek;
+        List<Student> listStudent=jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Student.class));
+        System.out.println("AAAA "+listStudent);
+        return listStudent;
     }
 
     /* Insert – wstawianie nowego wiersza do bazy */
