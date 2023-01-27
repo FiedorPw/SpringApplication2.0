@@ -1,6 +1,8 @@
 package bada_bdbt_proj;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +18,14 @@ import java.util.List;
 public class AppController implements WebMvcConfigurer {
 
     @Autowired
-    private CzlonekDAO dao;
+    private StudentDAO dao;
+
+
     @Controller
     public class GreetingController {
 
         @GetMapping("/database")
         public String greeting(Model model) {
-            System.out.println("dupasasaassa");
             List<Student> studentList = dao.list();
             System.out.println(studentList.size());
             model.addAttribute("studentList",studentList);
@@ -36,9 +39,8 @@ public class AppController implements WebMvcConfigurer {
 
         @GetMapping("/new")
         public String showNewForm(Model model) {
-            System.out.println("modio");
-            Student czlon=new Student(1, "stach", "pach", 123123, 12);
-            model.addAttribute("czlon",czlon);
+            Student stud=new Student(1, "stach", "pach", 123123, 12);
+            model.addAttribute("stud",stud);
             return "new_form";
 
         }
@@ -47,18 +49,16 @@ public class AppController implements WebMvcConfigurer {
     @Controller
     public class dodawanie {
         @RequestMapping(value = "/save", method = RequestMethod.POST)
-        public String save(@ModelAttribute("czlon") Student czlon) {
-            dao.save(czlon);
-            System.out.println("dodawanko :)");
+        public String save(@ModelAttribute("stud") Student stud) {
+            dao.save(stud);
             return "redirect:/database";
         }
     }
     @Controller
     public class aktualizacja {
         @RequestMapping(value = "/update", method = RequestMethod.POST)
-        public String save(@ModelAttribute("czlon") Student czlon) {
-            dao.update(czlon);
-            System.out.println("aktualizacja :)");
+        public String save(@ModelAttribute("stud") Student stud) {
+            dao.update(stud);
             return "redirect:/database";
         }
     }
@@ -68,8 +68,8 @@ public class AppController implements WebMvcConfigurer {
             public ModelAndView showEditForm(@PathVariable(name="id") int id)
             {
                 ModelAndView mav=new ModelAndView("edit_form");
-                Student czlon=dao.get(id);
-                mav.addObject("czlon",czlon);
+                Student stud=dao.get(id);
+                mav.addObject("stud",stud);
                 return mav;
             }
     }
@@ -86,7 +86,6 @@ public class AppController implements WebMvcConfigurer {
     }
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        System.out.println("dupazzzzz");
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/main").setViewName("main");
         registry.addViewController("/").setViewName("index");

@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 
 @Repository
-public class CzlonekDAO {
+public class StudentDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     public List<Student> list(){
@@ -20,15 +20,15 @@ public class CzlonekDAO {
 
         System.out.println(jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Student.class)).isEmpty());
         List<Student> listStudent=jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Student.class));
-        System.out.println("AAAA "+listStudent);
+        System.out.println(listStudent);
         return listStudent;
     }
 
     /* Insert – wstawianie nowego wiersza do bazy */
-    public void save(Student czlonek) {
+    public void save(Student student) {
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
         insertActor.withTableName("STUDENCI").usingColumns("ID_STUDENTA","IMIE","NAZWISKO","PESEL","TELEFON");
-        BeanPropertySqlParameterSource param =new BeanPropertySqlParameterSource(czlonek);
+        BeanPropertySqlParameterSource param =new BeanPropertySqlParameterSource(student);
         insertActor.execute(param);
     }
     /* Read – odczytywanie danych z bazy */
@@ -36,43 +36,22 @@ public class CzlonekDAO {
         String sql = "SELECT * FROM STUDENCI WHERE ID_STUDENTA = ?";
 
         Object[] args={id};
-        Student czlon=jdbcTemplate.queryForObject(sql,args,
+        Student stud=jdbcTemplate.queryForObject(sql,args,
                 BeanPropertyRowMapper.newInstance(Student.class));
-        return czlon;
+        return stud;
 
     }
-
-//    public Student getTest(int id){
-////
-////
-////            String sql = "SELECT * FROM CUSTOMER WHERE ID = ?";
-////
-////            return (Customer) jdbcTemplate.queryForObject(
-////                    sql,
-////                    new Object[]{id},
-////                    new BeanPropertyRowMapper(Customer.class));
-//
-////
-////        String sql = "SELECT * FROM STUDENCI WHERE ID = ?";
-////
-////            return (Student) jdbcTemplate.queryForObject(
-////                    sql, new Object[]{id}, new BeanPropertyRowMapper(Student.class));
-////
-////        jdbcTemplate.queryForObject("select * from student_id = ?", studentRowMapper, studentId);
-//
-//    }
-
 
 
 
 
 
     /* Update – aktualizacja danych */
-    public void update(Student czlonek) {
+    public void update(Student student) {
         String sql="UPDATE STUDENCI SET ID_STUDENTA=:ID_STUDENTA,IMIE=:IMIE, NAZWISKO=:NAZWISKO,PESEL=:PESEL,TELEFON=:TELEFON WHERE ID_STUDENTA=:ID_STUDENTA";
 //        String sql="UPDATE PARTNERZY SET NAZWA=:NAZWA,STRONA_INTERNETOWA=:STRONA_INTERNETOWA, SPOSOB_WSPOLPRACY=:SPOSOB_WSPOLPRACY,NR_KLUBU=:NR_KLUBU WHERE NR_PARTNERA=:NR_PARTNERA";
 
-        BeanPropertySqlParameterSource param =new BeanPropertySqlParameterSource(czlonek);
+        BeanPropertySqlParameterSource param =new BeanPropertySqlParameterSource(student);
         NamedParameterJdbcTemplate template =new NamedParameterJdbcTemplate(jdbcTemplate);
         template.update(sql,param);
     }
@@ -81,7 +60,7 @@ public class CzlonekDAO {
         jdbcTemplate.update(sql,id);
     }
 
-    public CzlonekDAO(JdbcTemplate jdbcTemplate) {
+    public StudentDAO(JdbcTemplate jdbcTemplate) {
         super();
         this.jdbcTemplate = jdbcTemplate;
     }

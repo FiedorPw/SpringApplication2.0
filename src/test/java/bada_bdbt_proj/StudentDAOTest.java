@@ -11,8 +11,8 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CzlonekDAOTest extends Object {
-    private CzlonekDAO dao;
+class StudentDAOTest extends Object {
+    private StudentDAO dao;
     @BeforeEach
     void setUp() throws SQLException {
         DriverManagerDataSource datasource=new DriverManagerDataSource();
@@ -20,7 +20,7 @@ class CzlonekDAOTest extends Object {
         datasource.setUsername("BADAGRB19");
         datasource.setPassword("BADAGRB19");
         datasource.setDriverClassName("oracle.jdbc.OracleDriver");
-        dao=new CzlonekDAO(new JdbcTemplate(datasource));
+        dao=new StudentDAO(new JdbcTemplate(datasource));
 
         dao.list();
 
@@ -46,14 +46,14 @@ class CzlonekDAOTest extends Object {
 
     @Test
     void save() {
-        Student czlonek=new Student(21,"stach","pach",12123,12);
-        dao.save(czlonek);
+        Student student=new Student(21,"stach","pach",12123,12);
+        dao.save(student);
     }
 
     @Test
     void get() {
-        Student czlon=dao.get(4);
-        System.out.println(czlon);
+        Student stud=dao.get(4);
+        System.out.println(stud);
     }
 
     @Test

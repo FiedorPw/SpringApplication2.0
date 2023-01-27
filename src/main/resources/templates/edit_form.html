@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>EDYCJA</title>
@@ -7,27 +7,27 @@
 <body>
 <div align="center">
   <h1>Dodaj nowego członka</h1>
-  <form action="#" th:action="@{/update}" th:object="${czlon}" method="post">
+  <form action="#" th:action="@{/update}" th:object="${stud}" method="post">
     <table border="1"  cellpadding="10">
       <tr>
         <td>NR_PARTNERA:</td>
-        <td><input type="text" th:field="*{NR_PARTNERA}" readonly="readonly"></td>
+        <td><input type="text" th:field="*{ID_STUDENTA}" readonly="readonly"></td>
       </tr>
       <tr>
         <td>NR_PARTNERA:</td>
-        <td><input type="text" th:field="*{NAZWA}"></td>
+        <td><input type="text" th:field="*{IMIE}"></td>
       </tr>
       <tr>
         <td>strona:</td>
-        <td><input type="text" th:field="*{STRONA_INTERNETOWA}"></td>
+        <td><input type="text" th:field="*{NAZWISKO}"></td>
       </tr>
       <tr>
         <td>sposob wspolpracy:</td>
-        <td><input type="text" th:field="*{SPOSOB_WSPOLPRACY}"></td>
+        <td><input type="text" th:field="*{PESEL}"></td>
       </tr>
       <tr>
         <td>nr_klubu:</td>
-        <td><input type="text" th:field="*{NR_KLUBU}"></td>
+        <td><input type="text" th:field="*{TELEFON}"></td>
       </tr>
       <tr>
         <td colspan="2"><button type="submit">Save</button></td>

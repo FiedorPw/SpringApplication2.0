@@ -74,50 +74,6 @@ public class Student implements Serializable {
 
 
 
-    /*
-    public int getNR_CZLONKA() {
-        return NR_CZLONKA;
-    }
-
-    public String getIMIE() {
-        return IMIE;
-    }
-
-    public String getNAZWISKO() {
-        return NAZWISKO;
-    }
-
-    public String getPESEL() {
-        return PESEL;
-    }
-
-    public String getNR_TELEFONU() {
-        return NR_TELEFONU;
-    }
-
-
-
-    public void setNR_CZLONKA(int NR_CZLONKA) {
-        this.NR_CZLONKA = NR_CZLONKA;
-    }
-
-    public void setIMIE(String IMIE) {
-        this.IMIE = IMIE;
-    }
-
-    public void setNAZWISKO(String NAZWISKO) {
-        this.NAZWISKO = NAZWISKO;
-    }
-
-    public void setPESEL(String PESEL) {
-        this.PESEL = PESEL;
-    }
-
-    public void setNR_TELEFONU(String NR_TELEFONU) {
-        this.NR_TELEFONU = NR_TELEFONU;
-    }
-
-    */
     @Override
     public String toString() {
         return "STUDENT{" +

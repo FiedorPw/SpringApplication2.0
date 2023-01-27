@@ -12,22 +12,10 @@ import java.sql.SQLException;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 public class Test2 extends Object {
 
 
-    private CzlonekDAO dao;
+    private StudentDAO dao;
 
     @BeforeEach
     void setUp() throws SQLException {
@@ -36,7 +24,7 @@ public class Test2 extends Object {
         datasource.setUsername("BADAGRB19");
         datasource.setPassword("BADAGRB19");
         datasource.setDriverClassName("oracle.jdbc.OracleDriver");
-        dao = new CzlonekDAO(new JdbcTemplate(datasource));
+        dao = new StudentDAO(new JdbcTemplate(datasource));
 
         //dao.list();
 
