@@ -2,6 +2,14 @@ Color used:
 #FAC3E4,
 #8b333a
 
+
+:root {
+    --orange: #ce9187;
+    --white: #ffffff;
+}
+
+
+
 h1{
     color: blue;
  }
@@ -11,13 +19,13 @@ label{
 html{
      margin:0;
      padding:0;
-     color: #FAC3E4;
+     color: pomaranczowy;
      text-shadow:2px 2px black;
      text-decoration:none;
      font-family: 'Roboto', sans-serif;
 }
 body {
-     color: #FAC3E4;
+     color: var(--orange);
      margin-top:200px;
      font-weight:bolder;
      display:flex;
@@ -34,7 +42,7 @@ body {
      }
 h1{
      font-size:40px;
-     color: #FAC3E4;
+     color: var(--orange);
 }
 
 button{
@@ -44,34 +52,34 @@ button{
        font-size:30px;
        font-width:bolder;
        color: white-smoke;
-       background-color:#FAC3E4;
+       background-color:var(--orange);
        border-radius: 10px;
 }
 input{
       width:160px;
       height:40px;
       border-radius:10px;
-      color: white;
+      color: black;
 }
 
 label{
       font-size:38px;
-      color: #FAC3E4;
+      color: var(--orange);
 }
 
 span{
     font-size:25px;
-    color: #FAC3E4;
+    color: var(--orange);
 }
 
 title{
      font-size:22px;
-     color: #FAC3E4;
+     color:var(--orange);
 }
 
 a{
      font-size:22px;
-     color: #FAC3E4;
+     color: var(--orange);
 }
 
 nav{
@@ -167,3 +175,8 @@ ul{
     justify-content: space-between;
 }
 
+
+:root {
+    --orange: #cd6858;
+    --white: #ffffff;
+}

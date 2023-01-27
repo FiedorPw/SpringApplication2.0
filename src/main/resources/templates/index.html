@@ -8,25 +8,12 @@
     <!--ten działa po odpaleniu serwera  -->
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
     <!--ten działa na podglądzie statycznym linkują do tego samego   -->
+    <link rel="stylesheet" href="../static/css/stylesheet.css"/>
 
+    <link rel="icon" href="../static/css/database-icon.svg">
+    <link rel="icon"  th:href="@{/css/database-icon.svg}"/>
 </head>
 <body>
-
-<!--<script>-->
-<!--    setTimeout(function(){-->
-<!--        window.location.href = 'https://www.tutorialspoint.com/javascript/';-->
-<!--    }, 5000);-->
-<!--</script>-->
-
-<!--<script type="text/javascript">-->
-<!--    function Redirect()-->
-<!--    {-->
-<!--        window.location="http://www.wp.pl";-->
-<!--    }-->
-<!--    document.write("[[${#httpServletRequest.remoteUser}]] You will be redirected to a new page in 5 seconds");-->
-<!--    setTimeout('Redirect()', 5000);-->
-<!--</script>-->
-
 
 <!-- Navigation -->
 <nav >
@@ -43,10 +30,12 @@
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="../templates/main.html#">Main </a>
+                    <a class="nav-link" href="#">Main
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../templates/database.html#">Database</a>
+                    <a class="nav-link" th:href="@{/database}" >Database</a>
                 </li>
 
                 <li class="nav-item">

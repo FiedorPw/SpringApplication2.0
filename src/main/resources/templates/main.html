@@ -9,9 +9,13 @@
     <!--ten działa po odpaleniu serwera  -->
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
     <!--ten działa na podglądzie statycznym linkują do tego samego   -->
+    <link rel="stylesheet" href="../static/css/stylesheet.css"/>
+
+    <link rel="icon" href="../static/css/database-icon.svg">
+    <link rel="icon"  th:href="@{/css/database-icon.svg}"/>
 </head>
 <body>
-
+<h1>MAIN</h1>
 <!--<script>-->
 <!--    setTimeout(function(){-->
 <!--        window.location.href = 'https://www.tutorialspoint.com/javascript/';-->
@@ -47,7 +51,7 @@
                     <a class="nav-link" href="../templates/database.html#">Database</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b style="text-transform:capitalize">Mikołaj</b></a>
+                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
                 </li>
 
             </ul>
@@ -61,7 +65,7 @@
         <div class="col-md-10 mt-5">
             <form method="post" action="@{/main}">
                 <div class="form-group">
-                    <label inline="text">Welcome <a style="color:lightskyblue; text-transform:capitalize"><b><h2>Mikołaj</h2></b></a> to the main page!</label>
+                    <label inline="text">Welcome <a style="color:lightskyblue; text-transform:capitalize"><b><h2>[[${#httpServletRequest.remoteUser}]]</h2></b></a> to the main page!</label>
                     <div>If you want to logout, click "Logout" button under this text.</div>
                 </div>
 
