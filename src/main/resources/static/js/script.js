@@ -1,3 +1,4 @@
 function successfullyLogout(){
-alert("You have been successfully logged out");
+    alert("You have been successfully logged out");
+
 }

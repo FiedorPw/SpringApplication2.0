@@ -19,7 +19,7 @@ label{
 html{
      margin:0;
      padding:0;
-     color: pomaranczowy;
+     color: var(--orange);
      text-shadow:2px 2px black;
      text-decoration:none;
      font-family: 'Roboto', sans-serif;

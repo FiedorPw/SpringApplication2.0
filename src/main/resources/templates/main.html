@@ -15,21 +15,6 @@
     <link rel="icon"  th:href="@{/css/database-icon.svg}"/>
 </head>
 <body>
-<h1>MAIN</h1>
-<!--<script>-->
-<!--    setTimeout(function(){-->
-<!--        window.location.href = 'https://www.tutorialspoint.com/javascript/';-->
-<!--    }, 5000);-->
-<!--</script>-->
-
-<!--<script type="text/javascript">-->
-<!--    function Redirect()-->
-<!--    {-->
-<!--        window.location="http://www.wp.pl";-->
-<!--    }-->
-<!--    document.write("[[${#httpServletRequest.remoteUser}]] You will be redirected to a new page in 5 seconds");-->
-<!--    setTimeout('Redirect()', 5000);-->
-<!--</script>-->
 
 
 <!-- Navigation -->
@@ -41,14 +26,14 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../templates/index.html#">Home</a>
+                    <a class="nav-link" th:href="@{/login}">Home</a>
                 </li>
 
                 <li class="nav-item-main active">
-                    <a class="nav-link-main" href="#">Main</a>
+                    <a class="nav-link-main" th:href="@{/database}" >Main</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../templates/database.html#">Database</a>
+                    <a class="nav-link" th:href="@{/database}" >Database</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
