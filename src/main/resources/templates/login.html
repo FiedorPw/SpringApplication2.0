@@ -4,8 +4,12 @@
     <meta charset="UTF-8"/>
     <title>Login Page</title>
 
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <!--ten działa po odpaleniu serwera  -->
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
+    <!--ten działa na podglądzie statycznym linkują do tego samego   -->
+    <link rel="stylesheet" href="../static/css/stylesheet.css"/>
 
+    <!--    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>-->
 </head>
 <body>
 
@@ -44,7 +48,8 @@
 
                 <div class="form-group">
                     <label class="login-label-to-move-right" for="login">Login:</label>
-                    <input class="login-input-to-move-up" id="login" type="text" placeholder="Enter login" autocomplete="off" class="form-control" name="username"/>
+                    <input id="login" type="text" placeholder="Enter login" autocomplete="off" class="form-control login-input-to-move-up" name="username" />
+<!--                    class="login-input-to-move-up"-->
                 </div>
 
                 <div class="form-group">

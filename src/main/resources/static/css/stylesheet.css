@@ -60,7 +60,7 @@ label{
 }
 
 span{
-    font-size:25px
+    font-size:25px;
     color: #FAC3E4;
 }
 
@@ -145,7 +145,7 @@ ul{
 
 
 .nav-link-mikolaj{
-    margin:0 20px
+    margin:0 20px;
     font-size:35px;
 }
 
