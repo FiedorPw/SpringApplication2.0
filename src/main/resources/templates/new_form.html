@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="stylesheet.css" />
 <head>
     <meta charset="UTF-8">
     <title>Nowy Czlonek</title>
@@ -8,7 +9,7 @@
 <div align="center">
     <h1>Dodaj nowego członka</h1>
     <form action="#" th:action="@{/save}" th:object="${czlon}" method="post">
-    <table border="1"  cellpadding="10">
+    <table border="2"  cellpadding="10">
         <tr>
             <td>nazwa:</td>
             <td><input type="text" th:field="*{NAZWA}"></td>
