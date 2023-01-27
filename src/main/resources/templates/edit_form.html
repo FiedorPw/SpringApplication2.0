@@ -6,27 +6,27 @@
 </head>
 <body>
 <div align="center">
-  <h1>Dodaj nowego członka</h1>
+  <h1>Dodaj studenta</h1>
   <form action="#" th:action="@{/update}" th:object="${stud}" method="post">
     <table border="1"  cellpadding="10">
       <tr>
-        <td>NR_PARTNERA:</td>
+        <td>Id_studenta:</td>
         <td><input type="text" th:field="*{ID_STUDENTA}" readonly="readonly"></td>
       </tr>
       <tr>
-        <td>NR_PARTNERA:</td>
+        <td>Imie:</td>
         <td><input type="text" th:field="*{IMIE}"></td>
       </tr>
       <tr>
-        <td>strona:</td>
+        <td>Nazwisko:</td>
         <td><input type="text" th:field="*{NAZWISKO}"></td>
       </tr>
       <tr>
-        <td>sposob wspolpracy:</td>
+        <td>Pesel:</td>
         <td><input type="text" th:field="*{PESEL}"></td>
       </tr>
       <tr>
-        <td>nr_klubu:</td>
+        <td>Telefon:</td>
         <td><input type="text" th:field="*{TELEFON}"></td>
       </tr>
       <tr>

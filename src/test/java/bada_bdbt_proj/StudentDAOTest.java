@@ -65,13 +65,13 @@ class StudentDAOTest extends Object {
 
     @Test
     void update() {
-        Student czlon=new Student(1, "stach", "pach", 123123, 12);
-        czlon.setID_STUDENTA(10);
-        czlon.setIMIE("WykopPremium");
-        czlon.setPESEL(1234);
-        czlon.setNAZWISKO("nu.wykop.pl");
-        czlon.setTELEFON(1);
-        dao.update(czlon);
+        Student stud=new Student(1, "stach", "pach", 123123, 12);
+        stud.setID_STUDENTA(10);
+        stud.setIMIE("WykopPremium");
+        stud.setPESEL(1234);
+        stud.setNAZWISKO("nu.wykop.pl");
+        stud.setTELEFON(1);
+        dao.update(stud);
     }
 
 
