@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<link rel="stylesheet" href="../static/css/stylesheet.css" />
 <head>
     <meta charset="UTF-8" >
     <title>Nowy Student</title>
@@ -8,7 +10,8 @@
 <div align="center">
     <h1>Dodaj studenta</h1>
     <form action="#" th:action="@{/save}" th:object="${stud}" method="post">
-    <table border="1"  cellpadding="10">
+    <table border="2"  cellpadding="10">
+
         <tr>
             <td>Imie:</td>
             <td><input type="text" th:field="*{IMIE}"></td>
