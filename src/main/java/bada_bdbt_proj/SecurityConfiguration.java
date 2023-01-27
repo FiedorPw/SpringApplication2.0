@@ -2,12 +2,16 @@ package bada_bdbt_proj;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -21,7 +25,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("admin")
                 .password("admin")
-                .roles("ADMIN");
+                .roles("ADMIN")
+                .and()
+                .withUser("user")
+                .password("user")
+                .roles("USER");
     }
     @Bean
     public PasswordEncoder getPasswordEncoder() { return NoOpPasswordEncoder.getInstance();
@@ -36,6 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/edit/*").access("hasRole('ADMIN')")
                 .antMatchers("/delete/*").access("hasRole('ADMIN')")
                 .antMatchers("/update").access("hasRole('ADMIN')")
+                .antMatchers("/registration").permitAll()
                 //.antMatchers("/main_user").access("hasRole('USER')")
                 //.antMatchers("/database_admin").access("hasRole('ADMIN')")
                 //.antMatchers("/database_user").access("hasRole('USER')")
@@ -45,9 +54,29 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/")
                 .permitAll()
                 .and()
-                .logout()
+                .logout().invalidateHttpSession(true)
+                .clearAuthentication(true)
+               // .logoutRequestMatcher(new AntPathRequestMatcher("/"))
                 .logoutUrl("/main")
                 .logoutSuccessUrl("/")
                 .permitAll();
     }
+    public AuthenticationProvider daoAuthenticationProvider() {
+        DaoAuthenticationProvider provider =
+                new DaoAuthenticationProvider();
+
+        //ustawianie haszowania hasła
+        provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+//        provider.setPasswordEncoder(passwordEncoder());
+
+        provider.setUserDetailsService(this.databaseUserDetailsService);
+        return provider;
+    }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+
+
 }

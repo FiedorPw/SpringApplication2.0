@@ -25,9 +25,7 @@ public class MyErrorController implements ErrorController {
             else if(statusCode == HttpStatus.GATEWAY_TIMEOUT.value()) {
                 return "errors/504";
             }
-            else if(statusCode == ) {
-                return "errors/504";
-            }
+
             else {
                 return "errors/other";
             }
