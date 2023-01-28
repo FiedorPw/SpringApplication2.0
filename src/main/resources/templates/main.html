@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Main Page</title>
-<!--    <link rel="stylesheet" href="../static/css/stylesheet.css" />-->
-<!--    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>-->
+    <!--    <link rel="stylesheet" href="stylesheet.css" />-->
+    <!--    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>-->
 
     <!--ten działa po odpaleniu serwera  -->
-    <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
+    <link rel="stylesheet" th:href="@{../css/stylesheet.css}"/>
     <!--ten działa na podglądzie statycznym linkują do tego samego   -->
-    <link rel="stylesheet" href="../static/css/stylesheet.css"/>
+    <link rel="stylesheet" href="../stylesheet.css"/>
 
     <link rel="icon" href="../static/css/database-icon.svg">
     <link rel="icon"  th:href="@{/css/database-icon.svg}"/>
+
 </head>
 <body>
 
 
 <!-- Navigation -->
-<nav >
+<nav>
     <div class="container-main">
-        <a  href="/">BADA Spring Boot Project - Part II</a>
+        <a  href="/" style="text-decoration:none;color:whitesmoke;">BADA Spring Boot Project - Part II</a>
 
-          <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/login}">Home</a>
+                    <a class="nav-link" style="color:whitesmoke;"th:href="@{/login}">Home</a>
                 </li>
 
                 <li class="nav-item-main active">
-                    <a class="nav-link-main" th:href="@{/database}" >Main</a>
+                    <a class="nav-link-main" style="color:whitesmoke;"th:href="@{/database}" >Main</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/database}" >Database</a>
+                    <a class="nav-link" style="color:whitesmoke;"th:href="@{/database}" >Database</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
@@ -54,7 +55,7 @@
                     <div>If you want to logout, click "Logout" button under this text.</div>
                 </div>
 
-                <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" style="border:none;color:whitesmoke;" value="Sign Out">Logout</button>
             </form>
         </div>
 

@@ -11,60 +11,60 @@ Color used:
 
 
 h1{
-    color: blue;
- }
+    color: var(--orange);
+}
 label{
     color:blue;
-    }
+}
 html{
-     margin:0;
-     padding:0;
-     color: var(--orange);
-     text-shadow:2px 2px black;
-     text-decoration:none;
-     font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding:0;
+    color: var(--orange);
+    text-shadow:2px 2px black;
+    text-decoration:none;
+    font-family: 'Roboto', sans-serif;
 }
 body {
-     color: var(--orange);
-     margin-top:200px;
-     font-weight:bolder;
-     display:flex;
-     flex-direction: column;
-     text-align: center;
-     align-items: center;
-     justify-content: center;
-     background-image: url('background-image-code.jpg');
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;
-     text-decoration:none;
-     }
+    color: var(--orange);
+    margin-top:200px;
+    font-weight:bolder;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-image: url('background-image-code.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-decoration:none;
+}
 h1{
-     font-size:40px;
-     color: var(--orange);
+    font-size:40px;
+    color: var(--orange);
 }
 
 button{
-      width:200px;
-      height:50px;
-      margin:5px;
-       font-size:30px;
-       font-width:bolder;
-       color: white-smoke;
-       background-color:var(--orange);
-       border-radius: 10px;
+    width:200px;
+    height:50px;
+    margin:5px;
+    font-size:30px;
+    font-width:bolder;
+    color: white-smoke;
+    background-color:var(--orange);
+    border-radius: 10px;
 }
 input{
-      width:160px;
-      height:40px;
-      border-radius:10px;
-      color: black;
+    width:160px;
+    height:40px;
+    border-radius:10px;
+    color: black;
 }
 
 label{
-      font-size:38px;
-      color: var(--orange);
+    font-size:38px;
+    color: var(--orange);
 }
 
 span{
@@ -73,13 +73,13 @@ span{
 }
 
 title{
-     font-size:22px;
-     color:var(--orange);
+    font-size:22px;
+    color:var(--orange);
 }
 
 a{
-     font-size:22px;
-     color: var(--orange);
+    font-size:22px;
+    color: var(--orange);
 }
 
 nav{
@@ -98,38 +98,38 @@ nav{
 }
 
 ul{
-     display:flex;
-     list-style-type:none;
-     align-items:center;
+    display:flex;
+    list-style-type:none;
+    align-items:center;
 }
 
 .container{
-     color:white-smoke;
-     display:flex;
-     flex-direction:row;
-     align-items:center;
-     text-align: center;
-     justify-content: space-between;
+    color:white-smoke;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    text-align: center;
+    justify-content: space-between;
 }
 
 .nav-item{
-      color:white-smoke;
-      margin-left:50px;
+    color:white-smoke;
+    margin-left:50px;
 }
 
 .navbar-brand{
-      color:white-smoke;
-      margin-right:650px;
- }
+    color:white-smoke;
+    margin-right:650px;
+}
 
 .nav-link{
-      background-color:gray;
-      padding: 10px;
-      border-radius:10px;
- }
+    background-color:gray;
+    padding: 10px;
+    border-radius:10px;
+}
 
 .login-label-to-move-right{
-      margin-left:70px;
+    margin-left:70px;
 }
 
 .home-link-in-login{
@@ -161,18 +161,25 @@ ul{
     font-size:40px;
 }
 
-.navbar-brand-index, .nav-item-main{
+.navbar-brand-index{
     margin:0 180px 0 40px;
     padding: 10px;
     border-radius:10px;
 }
+.nav-item-main{
+    padding: 10px;
+    border-radius:10px;
+    margin-left: 40px;
+}
 
 .container-main{
+    color: whitesmoke;
     display:flex;
     flex-direction:row;
     align-items:center;
     text-align: center;
     justify-content: space-between;
+    gap: 15px;
 }
 
 

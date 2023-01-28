@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Error Page</title>
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" href="../../static/css/stylesheet.css"/>
+    <link rel="stylesheet"  th:href="@{/css/stylesheet.css}"/>
+
+    <link rel="icon" href="../../static/css/database-icon.svg">
+    <link rel="icon"  th:href="@{/css/database-icon.svg}"/>
 </head>
-<body>
+<!-- <body style="background-image:background-image-code.jpg"> -->
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/">BADA Spring Boot Project - Part II</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand" href="/" style="text-decoration:none;color:whitesmoke;" >BADA Spring Boot Project - Part II</a>
     </div>
 </nav>
 <div class="container">
@@ -22,10 +21,10 @@
         <div class="col-md-4 mt-5">
             <form method="post" th:action="@{/}">
                 <div class="form-group">
-                    <div><b><p style="font-size:30px">Error</p></b></div>
-                    <div><p style="font-size:24px">404 - Page not found</p></div>
+                    <div><b><p style="font-size:36px;text-shadow:2px 2px black; ">Error</p></b></div>
+                    <div><p style="font-size:32px;text-shadow:2px 2px black;">404 - Page not found</p></div>
                 </div>
-                <button class="btn btn-primary" type="submit" value="Sign In">Back to home page</button>
+                <button class="btn btn-primary" type="submit" value="Sign In" style="font-size:20px; border:none; color: whitesmoke;" style="widht:200px" style="font-weight:400">Back to home page</button>
             </form>
         </div>
     </div>
